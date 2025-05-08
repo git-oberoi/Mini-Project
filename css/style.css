@@ -239,12 +239,17 @@ a {
   .hero-image {
     margin-top: 0;
     order: -1;
-    max-width: 400px;
+    max-width: 400px; 
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 8rem;
   
   }
-  .about-image{
-    max-width: 500px;
-    max-height: 200px;
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .social-links ul {
@@ -266,6 +271,9 @@ a {
   /* Mobile Portrait */
   .main-header {
     padding: 1.5rem;
+  }
+  .hero-image {
+    max-width: 300px;
   }
 
   .desktop-social{
