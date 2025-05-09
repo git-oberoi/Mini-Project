@@ -56,7 +56,7 @@ a {
 
 .main-nav a:hover,
 .social-links a:hover {
-  background: linear-gradient(135deg, #00ffd5, #006eff);
+  background: linear-gradient(135deg, #ff69f7, #006eff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -69,6 +69,7 @@ a {
   align-items: flex-start;
   padding: 0rem 5% 0.1rem 5%;
   gap: 1.5rem;
+  margin-bottom: 4rem;
   min-height: auto;
   position: relative;
 }
@@ -86,6 +87,7 @@ a {
 .hero-text h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  margin-left: -5px;
   font-weight: bold;
 }
 
@@ -97,6 +99,8 @@ a {
 
 /* Hero Image */
 .hero-image {
+  position: relative;
+  display: inline-block;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -106,19 +110,32 @@ a {
   animation: slideInUp 1s ease-out forwards;
   opacity: 0;
 }
-.hero-image img {
+
+
+.hero-image .image-background {
+  background: linear-gradient(to bottom right, #ff7cd1,#006eff);
+  height: 69%;
   width: 100%;
-  max-width: 400px; 
+  position: absolute;
+  bottom: 0;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.hero-image img {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
   height: auto;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  object-fit: cover;
   border-radius: 10px; 
 }
 
-
 /* BUTTON STYLES*/
 .btn {
-  background: linear-gradient(135deg, #00ffd5, #006eff);
+  background: linear-gradient(135deg, #ff7cd1,#006eff);
   color: #121212;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -126,10 +143,11 @@ a {
   transition: background 0.3s;
   border: none;
   cursor: pointer;
+
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #ff7cd1, #006eff);
+  background: linear-gradient(135deg,  #006eff,#ff7cd1);
   filter: brightness(1.1);
   color: #121212;
 }
@@ -151,11 +169,34 @@ a {
   padding: 2rem 1rem;
 }
 
+/*About Styles*/
+
+
+
+.hero h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.about-highlights {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.about-highlights li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+
+
 /* BLOG STYLES */
 .blog-intro {
   text-align: center;
   padding: 3rem 1rem 1rem;
   color: white;
+   animation: slideInLeft 1s ease-out forwards;
 }
 
 .blog-intro h1 {
@@ -226,6 +267,40 @@ a {
   color: transparent; 
    font-weight: bold;
 }
+
+/*Contact Styles*/
+
+.contact-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.contact-form .form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  max-width: 100%;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+
+
+
 
 /*  ANIMATIONS  */
 @keyframes slideInLeft {
