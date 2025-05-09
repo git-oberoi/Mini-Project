@@ -35,3 +35,25 @@ $('.filter-btn').on('click', function () {
     $(`.gallery-item[data-category="${category}"]`).fadeIn();
   }
 });
+
+
+  // Show or hide the button on scroll
+  const goTopBtn = document.getElementById("goTopBtn");
+
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 300) {
+      goTopBtn.classList.add("show");
+    } else {
+      goTopBtn.classList.remove("show");
+    }
+  });
+
+  // Scroll to top on click
+  goTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+
