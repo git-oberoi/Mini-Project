@@ -1,6 +1,6 @@
 # Mini-Project-3  
 # Online Portfolio For Photographers
-
+**Github Page:** https://git-oberoi.github.io/Mini-Project/index.html
 **Group Members:**  
 | Name                | Regd. No.      |  
 |---------------------|----------------|  
