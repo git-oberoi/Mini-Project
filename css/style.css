@@ -27,8 +27,8 @@ a {
 
 /* Social Links */
 .social-links img {
-  height: 18px;
-  width: 18px;
+  height: 1.2rem;
+  width: 1.2rem;
   filter: invert(100%);
   transition: opacity 0.3s;
 }
@@ -50,7 +50,7 @@ a {
 .social-links a {
   color: white;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
@@ -108,11 +108,11 @@ a {
 }
 .hero-image img {
   width: 100%;
-  max-width: 400px; /* Adjust this value for smaller size */
+  max-width: 400px; 
   height: auto;
   object-fit: cover;
   display: block;
-  border-radius: 10px; /* Optional: to soften corners */
+  border-radius: 10px; 
 }
 
 
@@ -151,6 +151,82 @@ a {
   padding: 2rem 1rem;
 }
 
+/* BLOG STYLES */
+.blog-intro {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+  color: white;
+}
+
+.blog-intro h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-intro .tagline {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 5%;
+  background-color:  #0e0d0d;
+}
+
+.post-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-content p {
+  flex-grow: 1;
+  color: #cccccc;
+  margin-bottom: 1.2rem;
+}
+
+.post-content .btn {
+  align-self: flex-start;
+}
+
+.read-more-link {
+   background-image: linear-gradient(to right, #ffbaba, #ff6767); 
+  -webkit-background-clip: text; 
+  color: transparent; 
+   font-weight: bold;
+}
+
 /*  ANIMATIONS  */
 @keyframes slideInLeft {
   0% {
@@ -181,6 +257,7 @@ a {
   color: white;
   z-index: 1000;
 }
+
 
 /*  RESPONSIVE DESIGN */
 @media screen and (max-width: 1200px) {
