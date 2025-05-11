@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;600&display=swap');
+
 /* BASE STYLES */
 * {
   margin: 0;
@@ -7,8 +9,38 @@
 
 body {
   background-color: #0e0d0d;
-  color: #ffff;
+  color: #cccccc;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  animation: fadeInPage 0.5s ease-out forwards;
 }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 
 a {
   color: inherit;
@@ -185,22 +217,6 @@ a {
 }
 
 
-/* ----FOOTER----- */
-.main-footer {
-
-  background-color: #1e1e1e;
-  text-align: center;
-  padding: 1rem;
-  color: #888888;
-}
-.social-footer ul{
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 2rem 1rem;
-}
-
 /*Slider Styles*/
 .hero-slider {
   position: relative;
@@ -278,6 +294,106 @@ a {
   background-color: tomato;
   opacity: 1;
 }
+
+
+/* ----FOOTER----- */
+.main-footer {
+  background-color: #1e1e1e;
+  padding: 2rem 5%;
+  color: #888888;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInReveal 0.5s ease-out forwards;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-areas:
+    "home about"
+    "blog contact"
+    "portfolio .";
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem 1rem;
+  max-width: 300px;
+}
+
+.footer-nav a {
+  color: #cccccc;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.footer-nav a:hover {
+  background: linear-gradient(135deg, #ff7cd1, #006eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-nav a.active {
+  background: linear-gradient(135deg, #ff7cd1, #006eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.social-footer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+}
+
+.social-footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0rem 0rem 0rem 5rem;
+}
+
+.contact-info {
+  text-align: right;
+  font-size: 1rem;
+  font-style: normal;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-link {
+  color: #cccccc;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact-link:hover {
+  background: linear-gradient(135deg, #ff7cd1, #006eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid #444444;
+  margin: 1rem 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  animation: fadeInReveal 0.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
 
 /*About Styles*/
 
@@ -485,12 +601,57 @@ a {
 }
 
 
-
-
-
-
-
 /*  ANIMATIONS  */
+
+/* Fade-in Reveal Animation for Portfolio and Blog */
+.gallery-item,
+.post-card,
+.filter-btn {
+  opacity: 0;
+  animation: fadeInReveal 0.5s ease-out forwards;
+}
+
+.gallery-item:nth-child(1),
+.post-card:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2),
+.post-card:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3),
+.post-card:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4),
+.post-card:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5),
+.post-card:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6),
+.post-card:nth-child(6) { animation-delay: 0.6s; }
+.gallery-item:nth-child(7),
+.post-card:nth-child(7) { animation-delay: 0.7s; }
+.gallery-item:nth-child(8),
+.post-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Animation Keyframes */
+@keyframes fadeInReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Disable animations for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item,
+  .post-card {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+
+
+
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100px);
@@ -549,12 +710,9 @@ a {
   visibility: visible;
 }
 
-/*  RESPONSIVE DESIGN */
-
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
   /* Mobile Landscape/Tablet Portrait */
-  
-  
   .main-header {
     padding: 2rem 1.5rem;
     position: relative;
@@ -575,40 +733,51 @@ a {
   .main-nav.active ul {
     display: flex;
   }
-/* hide social link in small screen */
-  .desktop-social{
+
+  /* Hide social link in small screen */
+  .desktop-social {
     display: none;
   }
- /* Mobile Navigation Toggle */
 
+  /* Mobile Navigation Toggle */
   .hamburger {
     display: block;
     font-size: 1.8rem;
     cursor: pointer;
   }
 
-
   .social-links ul {
     justify-content: center;
     margin-top: 1rem;
   }
-  /* Hero Section Adjustments */
+ /* Hero Section Adjustments */
   .hero,
-  .hero-home {
+  .hero-home,
+  .contact-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 2rem 5%;
   }
 
-  .hero-text,
-  .hero-image {
-    max-width: 100%;
-    margin-top: 0;
+  .hero-home {
+    display: flex;
+    gap: 1rem;
   }
 
-  .hero-text h1 {
-    font-size: 2rem;
+  .hero-text {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+    align-self: center;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 90vw;
   }
 
   .hero-image img {
@@ -616,12 +785,26 @@ a {
   }
 
   .hero-slider {
-    margin-top: 0;
-    height: 200px;
+    order: 3;
+    margin: 0 auto;
+    height: 150px;
+    width: 100%;
   }
 
   .slide img {
-    height: 200px;
+    height: 150px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p,
+  .tagline,
+  .about-highlights li,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
   }
 
   /* Portfolio and Blog Adjustments */
@@ -641,6 +824,31 @@ a {
     width: 100%;
   }
 
-}
+  /* Footer Responsive */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
 
- 
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: none;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-footer ul {
+    padding: 1rem 0;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+}

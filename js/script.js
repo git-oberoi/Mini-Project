@@ -2,7 +2,20 @@
 document.querySelector('.hamburger').addEventListener('click', function () {
   document.querySelector('.main-nav').classList.toggle('active');
 });
-
+//Form Vakidation
+$('.contact-form').submit(function (e) {
+  e.preventDefault();
+  const name = $('#name').val();
+  const email = $('#email').val();
+  const message = $('#message').val();
+  if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !message) {
+    $('.contact-form').prepend('<p class="error-message">Please fill out all fields correctly.</p>');
+    return;
+  }
+  $('.error-message').remove();
+  alert('Message sent!');
+  this.reset();
+});
 // Read More Button for Blog Page 
 $(document).ready(function () {
   $('.read-more').click(function () {
@@ -106,3 +119,5 @@ $('.filter-btn').on('click', function () {
       updateSlider(currentIndex);
     });
   });
+
+
