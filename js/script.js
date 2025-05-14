@@ -108,8 +108,8 @@ $(document).ready(function () {
     updateSlider(newIndex);
   }
 
-  // Auto-slide every 4 seconds
-  let sliderInterval = setInterval(nextSlide, 4000);
+  // Auto-slide every 3 seconds
+  let sliderInterval = setInterval(nextSlide, 3000);
 
   // Slider Controls
   $('.next').click(function () {
@@ -147,3 +147,15 @@ $(document).ready(function () {
     });
   });
 });
+
+  // Smooth Scrolling for Anchor Links
+  $('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+    const target = $($(this).attr('href'));
+
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 600); 
+    }
+  });
