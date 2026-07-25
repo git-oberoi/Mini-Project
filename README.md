@@ -1,6 +1,6 @@
 # Mini-Project-3  
 # Online Portfolio For Photographers
-**Github Page:** https://git-shivamraj.github.io/Mini-Project/index.html <br>
+**Github Page:** https://git-shivamraj.github.io/personal-portfolio-for-photographers/ <br>
 **Group Members:**  
 | Name                | Regd. No.      |  
 |---------------------|----------------|  
